@@ -19,13 +19,15 @@ install() {
     echo "ASDF"
     cd "$ASDF_DOWNLOAD_PATH"
 
-    prepare $version
+    #prepare $version
 
     #local configure_options="$(construct_configure_options)"
 #
     #echo "Building with options: $configure_options"
     #./configure $configure_options || exit 1
+    echo "Make!"
     make || exit 1
+    echo "Make install"
     make install || exit 1
   )
 }
