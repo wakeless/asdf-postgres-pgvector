@@ -3,8 +3,8 @@
 set -euo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for postgres-pgvector.
-GH_REPO="https://github.com/wakeless/asdf-postgres-pgvector"
-TOOL_NAME="postgres-pgvector"
+GH_REPO="https://github.com/pgvector/pgvector.git"
+TOOL_NAME="pgvector"
 TOOL_TEST="pg_config | rg pgvector"
 
 fail() {

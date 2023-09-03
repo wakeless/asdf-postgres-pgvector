@@ -8,4 +8,25 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 # shellcheck source=./lib/utils.bash
 source "${plugin_dir}/lib/utils.bash"
 
+install() {
+  local install_type=$1
+  local version=$2
+  local install_path=$3
+
+  # running this in a subshell
+  # because we don't want to disturb current working dir
+  (
+    cd "$ASDF_DOWNLOAD_PATH"
+
+    #prepare $version
+
+    #local configure_options="$(construct_configure_options)"
+#
+    #echo "Building with options: $configure_options"
+    #./configure $configure_options || exit 1
+    make || exit 1
+    make install || exit 1
+  )
+}
+
 install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
